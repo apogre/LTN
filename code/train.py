@@ -5,8 +5,8 @@ import logictensornetworks as ltn
 
 ltn.default_optimizer = "rmsprop"
 
-# swith between GPU and CPU
-config = tf.ConfigProto(device_count={'GPU': 1}, log_device_placement=True)
+# switch between GPU and CPU
+config = tf.ConfigProto(device_count={'GPU': 1}, log_device_placement=True, gpu_options=tf.GPUOptions(allow_growth=True))
 
 number_of_positive_examples_x_types = 250
 number_of_negative_examples_x_types = 250
@@ -91,12 +91,12 @@ clauses_for_wholes_of_parts = [ltn.Clause([ltn.Literal(False, isOfType[p], p2[p]
 clauses_for_disjoint_types = [ltn.Clause([ltn.Literal(False,isOfType[t],o),
                                           ltn.Literal(False,isOfType[t1],o)],label=t+"_is_not_"+t1) for t in selected_types for t1 in selected_types if t < t1]
 
-clause_for_at_least_one_type = [ltn.Clause([ltn.Literal(True,isOfType[t],o) for t in selected_types], label="an_object_has_at_least_one_type")]
+clause_for_at_least_one_type = [ltn.Clause([ltn.Literal(True, isOfType[t],o) for t in selected_types], label="an_object_has_at_least_one_type")]
+
 
 def add_noise_to_data(noise_ratio):
     if noise_ratio > 0:
         freq_other = {}
-
         for t in selected_types:
             freq_other[t] = {}
             number_of_not_t = len(idxs_of_negative_examples_of_types[t])
@@ -131,7 +131,7 @@ def add_noise_to_data(noise_ratio):
     idxs_of_noisy_positive_examples_of_partOf = np.where(partOf_of_pairs_of_train_data)[0]
     idxs_of_noisy_negative_examples_of_partOf = np.where(partOf_of_pairs_of_train_data == False)[0]
 
-    print "I have introduces the followins errors"
+    print "I have introduces the following errors"
     for t in selected_types:
         print "wrong positive", t, len(np.setdiff1d(idxs_of_noisy_positive_examples_of_types[t],
                                                     idxs_of_positive_examples_of_types[t]))
@@ -177,13 +177,13 @@ def train(number_of_training_iterations=2500,
                    clause_for_at_least_one_type
 
     # defining the label of the background knowledge
-    if  with_constraints:
+    if with_constraints:
         kb_label = "KB_wc_nr_"+str(noise_ratio)
     else:
         kb_label = "KB_nc_nr_"+str(noise_ratio)
 
     # definint the KB
-    KB = ltn.KnowledgeBase(kb_label,clauses,"models/")
+    KB = ltn.KnowledgeBase(kb_label, clauses, "models/")
 
     # start training
     init = tf.initialize_all_variables()
@@ -287,7 +287,8 @@ def get_feed_dict(idxs_of_pos_ex_of_types,
         print k.name, feed_dict[k].shape
     return feed_dict
 
-for nr in [0.0, 0.1, 0.2, 0.3, 0.4]:
+# for nr in [0.0, 0.1, 0.2, 0.3, 0.4]:
+for nr in [0.0]:
     for wc in [True, False]:
         train(number_of_training_iterations=1000,
               frequency_of_feed_dict_generation=100,
