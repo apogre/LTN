@@ -20,7 +20,8 @@ thresholds = np.arange(.00,1.1,.05)
 models_dir = "models/"
 results_dir = "results"
 
-errors_percentage = np.array([0.0, 0.1, 0.2, 0.3, 0.4])
+# errors_percentage = np.array([0.0, 0.1, 0.2, 0.3, 0.4])
+errors_percentage = np.array([0.0])
 constraints_choice = ["KB_wc_nr_", "KB_nc_nr_"]
 
 paths_to_models = ["baseline"]
@@ -133,7 +134,7 @@ def confusion_matrix_for_baseline(thresholds,with_partof_axioms=False):
 
 # determining the values of the atoms isOfType[t](bb) and isPartOf(bb1,bb2) for every type t and for every bounding box bb, bb1 and bb2.
 def compute_values_atomic_formulas(path_to_model):
-    predicted_types_values_tensor = tf.concat(1,[isOfType[t].tensor() for t in selected_types])
+    predicted_types_values_tensor = tf.concat([isOfType[t].tensor() for t in selected_types], 1)
     predicted_partOf_value_tensor = ltn.Literal(True,isPartOf,pairs_of_objects).tensor
     saver = tf.train.Saver()
     sess = tf.Session(config=config)
