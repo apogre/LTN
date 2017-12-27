@@ -6,12 +6,12 @@ import logictensornetworks as ltn
 ltn.default_optimizer = "rmsprop"
 
 # swith between GPU and CPU
-config = tf.ConfigProto(device_count={'GPU': 1})
+config = tf.ConfigProto(device_count={'GPU': 1}, log_device_placement=True)
 
-number_of_positive_examples_x_types=250
-number_of_negative_examples_x_types=250
-number_of_positive_example_x_partof=250
-number_of_negative_example_x_partof=250
+number_of_positive_examples_x_types = 250
+number_of_negative_examples_x_types = 250
+number_of_positive_example_x_partof = 250
+number_of_negative_example_x_partof = 250
 number_of_pairs_for_axioms = 1000
 
 train_data, pairs_of_train_data, types_of_train_data, partOf_of_pairs_of_train_data, _, _ = get_data("train",max_rows=1000000000)
@@ -37,7 +37,7 @@ print "Start model definition"
 # domain definition
 
 clauses_for_positive_examples_of_types = \
-    [ltn.Clause([ltn.Literal(True,isOfType[t],objects_of_type[t])],label="examples_of_"+t,weight=1.0) for t in existing_types]
+    [ltn.Clause([ltn.Literal(True, isOfType[t], objects_of_type[t])],label="examples_of_"+t, weight=1.0) for t in existing_types]
 
 clauses_for_negative_examples_of_types = \
     [ltn.Clause([ltn.Literal(False,isOfType[t],objects_of_type_not[t])],label="examples_of_not_"+t,weight=1.0) for t in existing_types]

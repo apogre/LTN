@@ -11,6 +11,7 @@ default_aggregator = "min"
 default_positive_fact_penality = 1e-6
 default_clauses_aggregator = "min"
 
+
 def train_op(loss, optimization_algorithm):
     if optimization_algorithm == "ftrl":
         optimizer = tf.train.FtrlOptimizer(learning_rate=0.01,learning_rate_power=-0.5)
@@ -22,14 +23,16 @@ def train_op(loss, optimization_algorithm):
         optimizer = tf.train.RMSPropOptimizer(learning_rate=0.01,decay=0.9)
     return optimizer.minimize(loss)
 
+
 def PR(tensor):
     global count
     np.set_printoptions(threshold=np.nan)
     return tf.Print(tensor,[tf.shape(tensor),tensor.name,tensor],summarize=200000)
 
-def disjunction_of_literals(literals,label="no_label"):
+
+def disjunction_of_literals(literals, label="no_label"):
     list_of_literal_tensors = [lit.tensor for lit in literals]
-    literals_tensor = tf.concat(1,list_of_literal_tensors)
+    literals_tensor = tf.concat(list_of_literal_tensors, 1)
     if default_tnorm == "product":
         result = 1.0-tf.reduce_prod(1.0-literals_tensor,1,keep_dims=True)
     if default_tnorm=="yager2":
@@ -46,14 +49,16 @@ def disjunction_of_literals(literals,label="no_label"):
         return tf.exp(tf.mul(tf.reduce_sum(tf.log(result), keep_dims=True),
                              tf.inv(tf.to_float(tf.size(result)))),name=label)
     if default_aggregator == "hmean":
-        return tf.div(tf.to_float(tf.size(result)),tf.reduce_sum(tf.inv(result),keep_dims=True))
+        return tf.div(tf.to_float(tf.size(result)), tf.reduce_sum(tf.reciprocal(result), keep_dims=True))
     if default_aggregator == "min":
-        return tf.reduce_min(result, keep_dims=True,name=label)
+        return tf.reduce_min(result, keep_dims=True, name=label)
+
 
 def smooth(parameters):
-    norm_of_omega = tf.reduce_sum(tf.expand_dims(tf.concat(0,
-                     [tf.expand_dims(tf.reduce_sum(tf.square(par)),0) for par in parameters]),1))
-    return tf.mul(default_smooth_factor,norm_of_omega)
+    norm_of_omega = tf.reduce_sum(tf.expand_dims(tf.concat([tf.expand_dims(tf.reduce_sum(tf.square(par)), 0) for par in\
+                                                            parameters], 0), 1))
+    return tf.multiply(default_smooth_factor, norm_of_omega)
+
 
 class Domain:
     def __init__(self,columns, dom_type="float",label=None):
@@ -99,33 +104,28 @@ class Function(Domain):
         else:
             self.tensor = tf.add(tf.matmul(self.domain,self.M),self.n)
 
+
 class Predicate:
     def __init__(self, label, domain, layers=default_layers):
         self.label = label
         self.domain = domain
         self.number_of_layers = layers
-        self.W = tf.Variable(tf.random_normal([layers,
-                                              self.domain.columns,
-                                              self.domain.columns]),
-                             name = "W"+label)
-        self.V = tf.Variable(tf.random_normal([layers,
-                                               self.domain.columns]),
-                             name = "V"+label)
-        self.b = tf.Variable(tf.neg(tf.ones([1,layers])),
-                             name = "b"+label)
-        self.u = tf.Variable(tf.ones([layers,1]),
-                             name = "u"+label)
-        self.parameters = [self.W,self.V,self.b,self.u]
+        self.W = tf.Variable(tf.random_normal([layers, self.domain.columns, self.domain.columns]), name="W"+label)
+        self.V = tf.Variable(tf.random_normal([layers, self.domain.columns]), name="V"+label)
+        self.b = tf.Variable(tf.negative(tf.ones([1, layers])), name="b"+label)
+        self.u = tf.Variable(tf.ones([layers, 1]), name="u"+label)
+        self.parameters = [self.W, self.V, self.b, self.u]
 
     def tensor(self,domain=None):
         if domain is None:
             domain = self.domain
         X = domain.tensor
-        XW = tf.batch_matmul(tf.tile(tf.expand_dims(X, 0), [self.number_of_layers, 1, 1]), self.W)
-        XWX = tf.squeeze(tf.batch_matmul(tf.expand_dims(X, 1), tf.transpose(XW, [1, 2, 0])))
+        XW = tf.matmul(tf.tile(tf.expand_dims(X, 0), [self.number_of_layers, 1, 1]), self.W)
+        XWX = tf.squeeze(tf.matmul(tf.expand_dims(X, 1), tf.transpose(XW, [1, 2, 0])))
         XV = tf.matmul(X, tf.transpose(self.V))
         gX = tf.matmul(tf.tanh(XWX + XV + self.b),self.u)
         return tf.sigmoid(gX)
+
 
 class Literal:
     def __init__(self,polarity,predicate,domain=None):
@@ -148,14 +148,16 @@ class Literal:
 
         self.parameters = predicate.parameters + domain.parameters
 
+
 class Clause:
     def __init__(self,literals,label=None, weight=1.0):
         self.weight=weight
         self.label=label
         self.literals = literals
-        self.tensor = disjunction_of_literals(self.literals,label=label)
+        self.tensor = disjunction_of_literals(self.literals, label=label)
         self.predicates = set([lit.predicate for lit in self.literals])
         self.parameters = [par for lit in literals for par in lit.parameters]
+
 
 class KnowledgeBase:
 
@@ -167,14 +169,14 @@ class KnowledgeBase:
         if not self.clauses:
             self.tensor = tf.constant(1.0)
         else:
-            clauses_value_tensor = tf.concat(0, [cl.tensor for cl in clauses])
+            clauses_value_tensor = tf.concat([cl.tensor for cl in clauses], 0)
             if default_clauses_aggregator == "min":
                 print "clauses aggregator is min"
                 self.tensor = tf.reduce_min(clauses_value_tensor)
             if default_clauses_aggregator == "mean":
                 self.tensor = tf.reduce_mean(clauses_value_tensor)
             if default_clauses_aggregator == "hmean":
-                self.tensor = tf.div(tf.to_float(tf.size(clauses_value_tensor)), tf.reduce_sum(tf.inv(clauses_value_tensor), keep_dims=True))
+                self.tensor = tf.div(tf.to_float(tf.size(clauses_value_tensor)), tf.reduce_sum(tf.reciprocal(clauses_value_tensor), keep_dims=True))
             if default_clauses_aggregator == "wmean":
                 weights_tensor = tf.constant([cl.weight for cl in clauses])
                 self.tensor = tf.div(tf.reduce_sum(tf.mul(weights_tensor, clauses_value_tensor)),tf.reduce_sum(weights_tensor))
