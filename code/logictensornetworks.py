@@ -20,8 +20,7 @@ def train_op(loss, optimization_algorithm):
     if optimization_algorithm == "ada":
         optimizer = tf.train.AdagradOptimizer(learning_rate=0.01)
     if optimization_algorithm == "rmsprop":
-        with tf.device('/device:GPU:0'):
-            optimizer = tf.train.RMSPropOptimizer(learning_rate=0.01,decay=0.9)
+        optimizer = tf.train.RMSPropOptimizer(learning_rate=0.01,decay=0.9)
     return optimizer.minimize(loss)
 
 
@@ -56,8 +55,7 @@ def disjunction_of_literals(literals, label="no_label"):
 
 
 def smooth(parameters):
-    with tf.device('/device:GPU:1'):
-        norm_of_omega = tf.reduce_sum(tf.expand_dims(tf.concat([tf.expand_dims(tf.reduce_sum(tf.square(par)), 0) for par in\
+    norm_of_omega = tf.reduce_sum(tf.expand_dims(tf.concat([tf.expand_dims(tf.reduce_sum(tf.square(par)), 0) for par in\
                                                             parameters], 0), 1))
     return tf.multiply(default_smooth_factor, norm_of_omega)
 
