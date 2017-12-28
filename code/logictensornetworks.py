@@ -6,7 +6,9 @@ import pdb
 default_layers = 10
 default_smooth_factor = 0.0000001
 default_tnorm = "product"
+
 default_optimizer = "gd"
+
 default_aggregator = "min"
 default_positive_fact_penality = 1e-6
 default_clauses_aggregator = "min"
@@ -61,27 +63,28 @@ def smooth(parameters):
 
 
 class Domain:
-    def __init__(self,columns, dom_type="float",label=None):
+    def __init__(self, columns, dom_type="float", label=None):
         self.columns = columns
         self.label = label
         self.tensor = tf.placeholder(dom_type, shape=[None, self.columns], name=self.label)
         self.parameters = []
 
-class Domain_concat(Domain):
 
+class Domain_concat(Domain):
     def __init__(self, domains):
         self.columns = np.sum([dom.columns for dom in domains])
         self.label = "concatenation of" + ",".join([dom.label for dom in domains])
         self.tensor = tf.concat(1, [dom.tensor for dom in domains])
         self.parameters = [par for dom in domains for par in dom.parameters]
 
-class Domain_slice(Domain):
 
+class Domain_slice(Domain):
     def __init__(self, domain, begin_column, end_column):
         self.columns = end_column - begin_column
         self.label = "projection of" + domain.label + "from column "+begin_column + " to column " + end_column
         self.tensor = tf.concat(1,tf.split(1,domain.columns,domain.tensor)[begin_column:end_column])
         self.parameters = domain.parameters
+
 
 class Function(Domain):
     def __init__(self, label, domain, range, value=None):
@@ -92,12 +95,8 @@ class Function(Domain):
         if self.value:
             self.parameters = []
         else:
-            self.M = tf.Variable(tf.random_normal([self.domain.columns,
-                                                   self.range.columns]),
-                                 name="M_"+self.label)
-
-            self.n = tf.Variable(tf.random_normal([1,self.range.columns]),
-                                 name="n_"+self.label)
+            self.M = tf.Variable(tf.random_normal([self.domain.columns, self.range.columns]), name="M_"+self.label)
+            self.n = tf.Variable(tf.random_normal([1,self.range.columns]), name="n_"+self.label)
             self.parameters = [self.n, self.M]
         if self.value:
             self.tensor = self.value
@@ -116,7 +115,7 @@ class Predicate:
         self.u = tf.Variable(tf.ones([layers, 1]), name="u"+label)
         self.parameters = [self.W, self.V, self.b, self.u]
 
-    def tensor(self,domain=None):
+    def tensor(self, domain=None):
         if domain is None:
             domain = self.domain
         X = domain.tensor
@@ -151,8 +150,8 @@ class Literal:
 
 class Clause:
     def __init__(self,literals,label=None, weight=1.0):
-        self.weight=weight
-        self.label=label
+        self.weight= weight
+        self.label= label
         self.literals = literals
         self.tensor = disjunction_of_literals(self.literals, label=label)
         self.predicates = set([lit.predicate for lit in self.literals])
@@ -187,7 +186,7 @@ class KnowledgeBase:
         else:
             self.loss = smooth(self.parameters) - PR(self.tensor)
         self.save_path = save_path
-        self.train_op = train_op(self.loss,default_optimizer)
+        self.train_op = train_op(self.loss, default_optimizer)
         self.saver = tf.train.Saver()
 
     def penalize_positive_facts(self):

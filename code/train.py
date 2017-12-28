@@ -2,6 +2,7 @@ from pascalpart import *
 import tensorflow as tf
 import random, os, pdb
 import logictensornetworks as ltn
+import sys
 
 ltn.default_optimizer = "rmsprop"
 
@@ -10,34 +11,41 @@ config = tf.ConfigProto(device_count={'GPU': 1}, log_device_placement=True, gpu_
 
 number_of_positive_examples_x_types = 250
 number_of_negative_examples_x_types = 250
+
 number_of_positive_example_x_partof = 250
 number_of_negative_example_x_partof = 250
+
 number_of_pairs_for_axioms = 1000
 
-train_data, pairs_of_train_data, types_of_train_data, partOf_of_pairs_of_train_data, _, _ = get_data("train",max_rows=1000000000)
+train_data, pairs_of_train_data, types_of_train_data, partOf_of_pairs_of_train_data, _, _ = get_data("train",\
+                                                                                                     max_rows=1000000000)
 
 # computing positive and negative exampls for types and partof
 
 idxs_of_positive_examples_of_types = {}
 idxs_of_negative_examples_of_types = {}
 
+
 for type in selected_types:
     idxs_of_positive_examples_of_types[type] = np.where(types_of_train_data == type)[0]
     idxs_of_negative_examples_of_types[type] = np.where(types_of_train_data != type)[0]
 
+
 idxs_of_positive_examples_of_partOf = np.where(partOf_of_pairs_of_train_data)[0]
-idxs_of_negative_examples_of_partOf = np.where(partOf_of_pairs_of_train_data == False)[0]
+idxs_of_negative_examples_of_partOf = np.where(partOf_of_pairs_of_train_data==False)[0]
+
 
 existing_types = [t for t in selected_types if idxs_of_positive_examples_of_types[t].size > 0]
+
 
 print "non empty types in train data", existing_types
 print "finished to upload and analyze data"
 print "Start model definition"
 
-# domain definition
 
-clauses_for_positive_examples_of_types = \
-    [ltn.Clause([ltn.Literal(True, isOfType[t], objects_of_type[t])],label="examples_of_"+t, weight=1.0) for t in existing_types]
+# domain definition
+clauses_for_positive_examples_of_types = [ltn.Clause([ltn.Literal(True, isOfType[t], objects_of_type[t])], \
+                                                     label="examples_of_"+t, weight=1.0) for t in existing_types]
 
 clauses_for_negative_examples_of_types = \
     [ltn.Clause([ltn.Literal(False,isOfType[t],objects_of_type_not[t])],label="examples_of_not_"+t,weight=1.0) for t in existing_types]

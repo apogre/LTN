@@ -30,25 +30,26 @@ selected_types = np.array(['bottle','body','cap','pottedplant','plant','pot','tv
 # uncomment this line for training all the object types
 #selected_types = types[1:]
 
-objects = ltn.Domain(number_of_features-1,label="a_bounding_box")
+objects = ltn.Domain(number_of_features-1, label="a_bounding_box")
 
-pairs_of_objects = ltn.Domain(2*(number_of_features-1)+2,label="a_pair_of_bounding_boxes")
+pairs_of_objects = ltn.Domain(2*(number_of_features-1)+2, label="a_pair_of_bounding_boxes")
 
+#type dict
 isOfType = {}
 for t in selected_types:
-    isOfType[t] = ltn.Predicate("is_of_type_"+t,objects,layers=5)
-isPartOf = ltn.Predicate("is_part_of",pairs_of_objects)
+    isOfType[t] = ltn.Predicate("is_of_type_"+t, objects, layers=5)
+
+isPartOf = ltn.Predicate("is_part_of", pairs_of_objects)
 
 objects_of_type = {}
 objects_of_type_not = {}
 for t in selected_types:
-    objects_of_type[t] = ltn.Domain(number_of_features-1,label="objects_of_type_"+t)
-    objects_of_type_not[t] = ltn.Domain(number_of_features-1,label="objects_of_type_not_" + t)
+    objects_of_type[t] = ltn.Domain(number_of_features-1, label="objects_of_type_"+t)
+    objects_of_type_not[t] = ltn.Domain(number_of_features-1, label="objects_of_type_not_" + t)
 
-object_pairs_in_partOf = ltn.Domain((number_of_features-1) * 2 + 2,
-                                    label="object_pairs_in_partof_relation")
-object_pairs_not_in_partOf = ltn.Domain((number_of_features-1) * 2 + 2,
-                                        label="object_pairs_not_in_partof_relation")
+object_pairs_in_partOf = ltn.Domain((number_of_features-1) * 2 + 2, label="object_pairs_in_partof_relation")
+object_pairs_not_in_partOf = ltn.Domain((number_of_features-1) * 2 + 2, label="object_pairs_not_in_partof_relation")
+
 
 def containment_ratios_between_two_bbxes(bb1, bb2):
     bb1_area = (bb1[-2] - bb1[-4]) * (bb1[-1] - bb1[-3])
@@ -57,6 +58,7 @@ def containment_ratios_between_two_bbxes(bb1, bb2):
     h_intersec = max(0,min([bb1[-1], bb2[-1]]) - max([bb1[-3], bb2[-3]]))
     bb_area_intersection = w_intersec * h_intersec
     return [float(bb_area_intersection)/bb1_area, float(bb_area_intersection)/bb2_area]
+
 
 def get_data(train_or_test_swritch,max_rows=10000000):
     assert train_or_test_swritch == "train" or train_or_test_swritch == "test"
@@ -106,6 +108,7 @@ def get_data(train_or_test_swritch,max_rows=10000000):
 
     return data, pairs_of_data, types_of_data, partOf_of_pair_of_data, pairs_of_bb_idxs, pics
 
+
 def get_part_whole_ontology():
     with open('data/pascalPartOntology.csv') as f:
         ontologyReader = csv.reader(f)
@@ -132,11 +135,13 @@ def get_part_whole_ontology():
 
 # reporting measures
 
+
 def precision(conf_matrix, prediction_array=None):
     if prediction_array is not None:
         return conf_matrix.diagonal()/prediction_array
     else:
         return conf_matrix.diagonal() / conf_matrix.sum(1).T
+
 
 def recall(conf_matrix,gold_array=None):
     if gold_array is not None:
@@ -144,7 +149,8 @@ def recall(conf_matrix,gold_array=None):
     else:
         return conf_matrix.diagonal() / conf_matrix.sum(0)
 
-def f1(precision,recall):
+
+def f1(precision, recall):
     return np.multiply(2*precision,recall)/(precision + recall)
 
 print "end of new pascalpart.py"
