@@ -1,0 +1,348 @@
+Anna's features are;0.905725;-0.63305;0.978489;-0.074517;0.111822;-1.53866;0.72909;1.15146;0.998372;0.550048;-1.31041;-0.53052;-0.00579447;0.577264;-0.321731;1.47197;1.55342;-1.20825;0.307754;-0.81359;-0.0870115;-2.0488;-1.55883;0.998497;-0.257187;0.483076;0.835117;0.226276;-0.3536;1.00512
+Anna smokes;0.959347
+Anna has cancer;0.956464
+Anna and Anna are friends;0.0160467
+Anna and Bob are friends;0.977318
+Anna and Chris are friends;0.0179379
+Anna and Daniel are friends;0.0211688
+Anna and Edward are friends;0.974945
+Anna and Frank are friends;0.978964
+Anna and Gary are friends;0.972528
+Anna and Helen are friends;0.027435
+Anna and Ivan are friends;0.0303624
+Anna and John are friends;0.338103
+Anna and Kate are friends;0.11565
+Anna and Lars are friends;0.109025
+Anna and Mich are friends;0.101546
+Anna and Nick are friends;0.398627
+Bob's features are;-0.100177;-0.418592;0.420599;0.0182786;-0.265594;0.803312;1.90241;0.614568;-0.874627;1.00343;-0.391275;-1.86643;-1.21636;0.33276;0.200002;-0.116024;0.609194;1.77624;-0.483015;0.715862;1.37748;0.621719;-0.826422;-2.89033;0.508086;-1.04272;-0.463392;0.0919789;-0.347257;0.185302
+Bob smokes;0.0330402
+Bob has cancer;0.0300834
+Bob and Anna are friends;0.0390473
+Bob and Bob are friends;0.0163674
+Bob and Chris are friends;0.960035
+Bob and Daniel are friends;0.0164195
+Bob and Edward are friends;0.00739415
+Bob and Frank are friends;0.00941358
+Bob and Gary are friends;0.00970732
+Bob and Helen are friends;0.0217251
+Bob and Ivan are friends;0.0122387
+Bob and John are friends;0.0671394
+Bob and Kate are friends;0.0122126
+Bob and Lars are friends;0.0750479
+Bob and Mich are friends;0.48586
+Bob and Nick are friends;0.0186829
+Chris's features are;-0.466617;-0.862798;0.632105;0.060705;0.166574;0.876309;-0.696566;0.136906;-0.108497;-1.44258;0.0206283;0.601791;-0.318008;-0.0800974;0.79927;0.604021;-0.372044;1.60913;1.20298;-1.25918;0.882565;0.467359;-1.70821;0.43415;-0.289777;0.0363419;0.101157;1.24813;0.233865;1.51251
+Chris smokes;0.0508182
+Chris has cancer;0.0522868
+Chris and Anna are friends;0.0142625
+Chris and Bob are friends;0.027895
+Chris and Chris are friends;0.0159659
+Chris and Daniel are friends;0.964978
+Chris and Edward are friends;0.0120075
+Chris and Frank are friends;0.0131395
+Chris and Gary are friends;0.0215091
+Chris and Helen are friends;0.00754167
+Chris and Ivan are friends;0.0131342
+Chris and John are friends;0.0379315
+Chris and Kate are friends;0.00813254
+Chris and Lars are friends;0.0444196
+Chris and Mich are friends;0.0199863
+Chris and Nick are friends;0.76957
+Daniel's features are;1.76697;0.299744;0.0757487;0.0408316;0.0773321;-0.235041;-0.605337;0.336179;-0.652836;0.822029;2.11919;0.58302;1.10648;-2.17547;-0.869059;0.901367;1.01555;-1.55621;-0.0424397;-1.54634;-0.0549491;-0.617798;0.717643;0.220912;1.80115;0.0744285;0.0142349;-0.532613;1.53336;-1.41198
+Daniel smokes;0.0318961
+Daniel has cancer;0.0281621
+Daniel and Anna are friends;0.00737515
+Daniel and Bob are friends;0.0106
+Daniel and Chris are friends;0.00920309
+Daniel and Daniel are friends;0.00700539
+Daniel and Edward are friends;0.00826298
+Daniel and Frank are friends;0.0100622
+Daniel and Gary are friends;0.0112465
+Daniel and Helen are friends;0.0102016
+Daniel and Ivan are friends;0.00787255
+Daniel and John are friends;0.011671
+Daniel and Kate are friends;0.00778241
+Daniel and Lars are friends;0.00651272
+Daniel and Mich are friends;0.0172819
+Daniel and Nick are friends;0.0068766
+Edward's features are;0.510239;0.420583;-0.227351;-0.680343;-1.54141;-2.0718;0.137573;1.47004;0.19989;0.78101;-1.01654;0.609275;-0.442769;-0.934752;0.688898;-1.93853;0.701108;-0.566425;-2.00695;0.00294606;-1.00485;0.879664;-1.6162;0.44106;-2.42315;0.321578;-1.13144;-2.83262;-0.173498;-0.0464678
+Edward smokes;0.97414
+Edward has cancer;0.973224
+Edward and Anna are friends;0.00714615
+Edward and Bob are friends;0.0111867
+Edward and Chris are friends;0.0093829
+Edward and Daniel are friends;0.00714904
+Edward and Edward are friends;0.0106059
+Edward and Frank are friends;0.972182
+Edward and Gary are friends;0.016804
+Edward and Helen are friends;0.0152596
+Edward and Ivan are friends;0.01389
+Edward and John are friends;0.019814
+Edward and Kate are friends;0.0108895
+Edward and Lars are friends;0.00931741
+Edward and Mich are friends;0.0067166
+Edward and Nick are friends;0.00747688
+Frank's features are;0.452856;-0.0742246;0.207241;0.740766;0.993707;-0.30611;1.74962;-0.0357441;0.436254;1.06425;0.162104;-0.440926;2.5157;1.19991;1.03106;-1.90659;-0.662435;1.04825;0.331022;0.566;-1.53906;1.19374;0.931858;0.776774;-0.225134;-1.23001;0.569668;-0.303257;2.12886;0.228362
+Frank smokes;0.967142
+Frank has cancer;0.0267003
+Frank and Anna are friends;0.00888359
+Frank and Bob are friends;0.00661325
+Frank and Chris are friends;0.0136398
+Frank and Daniel are friends;0.00758365
+Frank and Edward are friends;0.00733138
+Frank and Frank are friends;0.00714998
+Frank and Gary are friends;0.00716939
+Frank and Helen are friends;0.0161259
+Frank and Ivan are friends;0.00920591
+Frank and John are friends;0.0166759
+Frank and Kate are friends;0.00704305
+Frank and Lars are friends;0.00996543
+Frank and Mich are friends;0.0280857
+Frank and Nick are friends;0.00611211
+Gary's features are;0.467483;-0.146635;0.660511;0.475591;0.403748;-0.353613;0.00513267;0.35963;0.322876;0.948121;-1.29204;-1.38625;0.441256;-0.271907;1.01881;-0.916125;-0.369513;-0.747256;-1.31324;-0.562021;0.633255;0.256869;1.11868;0.299103;1.08028;-2.04237;0.763578;-0.692107;-1.13601;0.912189
+Gary smokes;0.950637
+Gary has cancer;0.0475029
+Gary and Anna are friends;0.0421981
+Gary and Bob are friends;0.0107372
+Gary and Chris are friends;0.0275325
+Gary and Daniel are friends;0.0101708
+Gary and Edward are friends;0.0189028
+Gary and Frank are friends;0.0278324
+Gary and Gary are friends;0.0152844
+Gary and Helen are friends;0.949662
+Gary and Ivan are friends;0.0283286
+Gary and John are friends;0.013289
+Gary and Kate are friends;0.0108774
+Gary and Lars are friends;0.0138897
+Gary and Mich are friends;0.119908
+Gary and Nick are friends;0.0111245
+Helen's features are;0.357423;-0.679255;0.147312;1.58285;1.40302;-0.990691;-0.796428;0.784017;-0.275668;-0.736843;0.119867;-0.328892;-0.790433;1.60459;-0.606956;-1.17989;-0.132132;-1.91326;0.423332;0.878775;-0.83006;1.05137;-0.887189;0.482708;-1.09472;0.587832;2.06623;-0.879095;1.61971;1.79886
+Helen smokes;0.0331422
+Helen has cancer;0.0293816
+Helen and Anna are friends;0.00696812
+Helen and Bob are friends;0.01219
+Helen and Chris are friends;0.00703193
+Helen and Daniel are friends;0.0110465
+Helen and Edward are friends;0.00867016
+Helen and Frank are friends;0.0128552
+Helen and Gary are friends;0.0162355
+Helen and Helen are friends;0.00727531
+Helen and Ivan are friends;0.00694867
+Helen and John are friends;0.0123127
+Helen and Kate are friends;0.00695009
+Helen and Lars are friends;0.00730258
+Helen and Mich are friends;0.0101535
+Helen and Nick are friends;0.0129014
+Ivan's features are;-0.89106;0.954326;-1.274;2.85222;-1.30049;0.10629;0.496642;-1.39155;-0.377724;-0.0606912;0.140793;-0.114322;-0.00781886;0.692403;-0.290986;0.56435;0.552397;-0.575661;0.274518;0.360059;-0.725615;0.239418;-1.4301;0.472403;0.679582;-0.261478;0.455343;0.370379;2.04037;-0.696879
+Ivan smokes;0.959539
+Ivan has cancer;0.31829
+Ivan and Anna are friends;0.0221902
+Ivan and Bob are friends;0.0854487
+Ivan and Chris are friends;0.672975
+Ivan and Daniel are friends;0.0363848
+Ivan and Edward are friends;0.0188182
+Ivan and Frank are friends;0.0200095
+Ivan and Gary are friends;0.115465
+Ivan and Helen are friends;0.0271988
+Ivan and Ivan are friends;0.020099
+Ivan and John are friends;0.956895
+Ivan and Kate are friends;0.0233312
+Ivan and Lars are friends;0.0353497
+Ivan and Mich are friends;0.966522
+Ivan and Nick are friends;0.0115464
+John's features are;0.79365;-1.95477;0.354343;1.25963;-2.48769;-0.550149;0.321524;-0.252688;1.25822;-0.937632;0.19995;1.61837;1.40153;-0.32895;0.467318;-0.221775;0.0736369;-0.219934;-0.656253;-0.820803;0.554936;0.160093;-0.524926;0.0242989;-0.609231;-1.38028;0.897515;0.902622;0.919517;-0.948692
+John smokes;0.0355431
+John has cancer;0.342738
+John and Anna are friends;0.00804577
+John and Bob are friends;0.00940249
+John and Chris are friends;0.00931744
+John and Daniel are friends;0.0153295
+John and Edward are friends;0.0105937
+John and Frank are friends;0.0175206
+John and Gary are friends;0.0114529
+John and Helen are friends;0.0101897
+John and Ivan are friends;0.0097978
+John and John are friends;0.0148098
+John and Kate are friends;0.00699036
+John and Lars are friends;0.0103866
+John and Mich are friends;0.0123817
+John and Nick are friends;0.00853163
+Kate's features are;1.7769;0.0389586;0.704195;2.88079;-0.161152;0.574791;0.202631;0.270215;1.63708;-1.7284;-1.20093;0.0299057;-0.655025;0.474141;-0.421051;0.0608518;-0.605007;2.14675;0.236683;-0.186302;-0.747959;-0.141825;0.471439;-0.633772;-0.692753;-0.155283;-0.6108;-0.641328;-0.522952;-0.985551
+Kate smokes;0.0313277
+Kate has cancer;0.317675
+Kate and Anna are friends;0.0178615
+Kate and Bob are friends;0.00909876
+Kate and Chris are friends;0.029411
+Kate and Daniel are friends;0.0380706
+Kate and Edward are friends;0.0447332
+Kate and Frank are friends;0.0158727
+Kate and Gary are friends;0.0115421
+Kate and Helen are friends;0.0109641
+Kate and Ivan are friends;0.00852653
+Kate and John are friends;0.0287458
+Kate and Kate are friends;0.00634844
+Kate and Lars are friends;0.95885
+Kate and Mich are friends;0.0205486
+Kate and Nick are friends;0.0178045
+Lars's features are;0.0329188;-1.07129;0.953163;-0.973332;-2.29008;0.561912;0.115276;0.537883;1.46491;1.09948;2.57158;1.62866;0.117361;0.179726;1.42959;-0.490371;1.18374;-1.31827;0.25414;-0.486906;0.645365;0.307647;-0.243854;0.729373;-0.685835;0.310711;-1.11397;-0.627018;-0.502757;1.39019
+Lars smokes;0.0279756
+Lars has cancer;0.454105
+Lars and Anna are friends;0.0072519
+Lars and Bob are friends;0.0131052
+Lars and Chris are friends;0.0076128
+Lars and Daniel are friends;0.014204
+Lars and Edward are friends;0.00825474
+Lars and Frank are friends;0.0761226
+Lars and Gary are friends;0.0138953
+Lars and Helen are friends;0.00813969
+Lars and Ivan are friends;0.0095511
+Lars and John are friends;0.00931504
+Lars and Kate are friends;0.00857903
+Lars and Lars are friends;0.00647156
+Lars and Mich are friends;0.00721251
+Lars and Nick are friends;0.0132914
+Mich's features are;1.365;-0.729337;-0.869757;-0.610929;0.497869;1.75223;-1.24748;0.823703;-1.30057;-1.37148;0.144589;0.941086;-1.91171;1.22644;0.888307;0.90304;0.770907;0.109495;-0.375484;-0.183179;1.03532;1.35415;-0.461021;-1.20816;0.228364;-0.297022;1.14497;-0.74722;-1.05615;2.01897
+Mich smokes;0.0263703
+Mich has cancer;0.122073
+Mich and Anna are friends;0.0330105
+Mich and Bob are friends;0.0323859
+Mich and Chris are friends;0.0252294
+Mich and Daniel are friends;0.90453
+Mich and Edward are friends;0.00814101
+Mich and Frank are friends;0.0168839
+Mich and Gary are friends;0.0229263
+Mich and Helen are friends;0.0126573
+Mich and Ivan are friends;0.00997568
+Mich and John are friends;0.0111184
+Mich and Kate are friends;0.0081116
+Mich and Lars are friends;0.01575
+Mich and Mich are friends;0.0144619
+Mich and Nick are friends;0.9723
+Nick's features are;1.64056;-0.805717;1.24925;-1.15463;1.24806;-0.213577;1.19862;2.13526;-0.0816369;1.15418;0.171645;-1.15875;-0.467733;-2.24628;0.379973;-0.430331;0.360987;-1.05064;1.05819;-0.0441554;0.999712;-0.0872493;0.886084;-1.047;1.97957;0.339265;-0.908375;-0.0396947;0.291584;-0.309428
+Nick smokes;0.966261
+Nick has cancer;0.150613
+Nick and Anna are friends;0.00986611
+Nick and Bob are friends;0.0115924
+Nick and Chris are friends;0.0225559
+Nick and Daniel are friends;0.00701564
+Nick and Edward are friends;0.00920852
+Nick and Frank are friends;0.0111433
+Nick and Gary are friends;0.00957577
+Nick and Helen are friends;0.0154642
+Nick and Ivan are friends;0.00869726
+Nick and John are friends;0.00838083
+Nick and Kate are friends;0.00853451
+Nick and Lars are friends;0.00914207
+Nick and Mich are friends;0.0163831
+Nick and Nick are friends;0.00847863
+Anna_and_Bob_are_friends truth value is ;0.977318
+Anna_and_Frank_are_friends truth value is ;0.978964
+Anna_and_Gary_are_friends truth value is ;0.972528
+Anna_and_Edward_are_friends truth value is ;0.974945
+Bob_and_Chris_are_friends truth value is ;0.960035
+Mich_and_Nick_are_friends truth value is ;0.9723
+Kate_and_Lars_are_friends truth value is ;0.95885
+Edward_and_Frank_are_friends truth value is ;0.972182
+Chris_and_Daniel_are_friends truth value is ;0.964978
+Ivan_and_Mich_are_friends truth value is ;0.966522
+Ivan_and_John_are_friends truth value is ;0.956895
+Gary_and_Helen_are_friends truth value is ;0.949662
+Anna_and_Anna_are_not_friends truth value is ;0.983953
+Anna_and_Chris_are_not_friends truth value is ;0.982062
+Anna_and_Daniel_are_not_friends truth value is ;0.978831
+Anna_and_Helen_are_not_friends truth value is ;0.972565
+Bob_and_Bob_are_not_friends truth value is ;0.983633
+Bob_and_Daniel_are_not_friends truth value is ;0.98358
+Bob_and_Edward_are_not_friends truth value is ;0.992606
+Bob_and_Frank_are_not_friends truth value is ;0.990586
+Bob_and_Gary_are_not_friends truth value is ;0.990293
+Bob_and_Helen_are_not_friends truth value is ;0.978275
+Chris_and_Anna_are_not_friends truth value is ;0.985738
+Chris_and_Chris_are_not_friends truth value is ;0.984034
+Chris_and_Edward_are_not_friends truth value is ;0.987993
+Chris_and_Frank_are_not_friends truth value is ;0.986861
+Chris_and_Gary_are_not_friends truth value is ;0.978491
+Chris_and_Helen_are_not_friends truth value is ;0.992458
+Daniel_and_Anna_are_not_friends truth value is ;0.992625
+Daniel_and_Bob_are_not_friends truth value is ;0.9894
+Daniel_and_Daniel_are_not_friends truth value is ;0.992995
+Daniel_and_Edward_are_not_friends truth value is ;0.991737
+Daniel_and_Frank_are_not_friends truth value is ;0.989938
+Daniel_and_Gary_are_not_friends truth value is ;0.988753
+Daniel_and_Helen_are_not_friends truth value is ;0.989798
+Edward_and_Bob_are_not_friends truth value is ;0.988813
+Edward_and_Chris_are_not_friends truth value is ;0.990617
+Edward_and_Daniel_are_not_friends truth value is ;0.992851
+Edward_and_Edward_are_not_friends truth value is ;0.989394
+Edward_and_Gary_are_not_friends truth value is ;0.983196
+Edward_and_Helen_are_not_friends truth value is ;0.98474
+Frank_and_Bob_are_not_friends truth value is ;0.993387
+Frank_and_Chris_are_not_friends truth value is ;0.98636
+Frank_and_Daniel_are_not_friends truth value is ;0.992416
+Frank_and_Frank_are_not_friends truth value is ;0.99285
+Frank_and_Gary_are_not_friends truth value is ;0.992831
+Frank_and_Helen_are_not_friends truth value is ;0.983874
+Gary_and_Bob_are_not_friends truth value is ;0.989263
+Gary_and_Chris_are_not_friends truth value is ;0.972468
+Gary_and_Daniel_are_not_friends truth value is ;0.989829
+Gary_and_Edward_are_not_friends truth value is ;0.981097
+Gary_and_Frank_are_not_friends truth value is ;0.972168
+Gary_and_Gary_are_not_friends truth value is ;0.984716
+Helen_and_Anna_are_not_friends truth value is ;0.993032
+Helen_and_Bob_are_not_friends truth value is ;0.98781
+Helen_and_Chris_are_not_friends truth value is ;0.992968
+Helen_and_Daniel_are_not_friends truth value is ;0.988954
+Helen_and_Edward_are_not_friends truth value is ;0.99133
+Helen_and_Frank_are_not_friends truth value is ;0.987145
+Helen_and_Helen_are_not_friends truth value is ;0.992725
+Ivan_and_Ivan_are_not_friends truth value is ;0.979901
+Ivan_and_Kate_are_not_friends truth value is ;0.976669
+Ivan_and_Lars_are_not_friends truth value is ;0.96465
+Ivan_and_Nick_are_not_friends truth value is ;0.988454
+John_and_John_are_not_friends truth value is ;0.98519
+John_and_Kate_are_not_friends truth value is ;0.99301
+John_and_Lars_are_not_friends truth value is ;0.989613
+John_and_Mich_are_not_friends truth value is ;0.987618
+John_and_Nick_are_not_friends truth value is ;0.991468
+Kate_and_Ivan_are_not_friends truth value is ;0.991473
+Kate_and_John_are_not_friends truth value is ;0.971254
+Kate_and_Kate_are_not_friends truth value is ;0.993652
+Kate_and_Mich_are_not_friends truth value is ;0.979451
+Kate_and_Nick_are_not_friends truth value is ;0.982195
+Lars_and_Ivan_are_not_friends truth value is ;0.990449
+Lars_and_John_are_not_friends truth value is ;0.990685
+Lars_and_Lars_are_not_friends truth value is ;0.993528
+Lars_and_Mich_are_not_friends truth value is ;0.992787
+Lars_and_Nick_are_not_friends truth value is ;0.986709
+Mich_and_John_are_not_friends truth value is ;0.988882
+Mich_and_Kate_are_not_friends truth value is ;0.991888
+Mich_and_Lars_are_not_friends truth value is ;0.98425
+Mich_and_Mich_are_not_friends truth value is ;0.985538
+Nick_and_Ivan_are_not_friends truth value is ;0.991303
+Nick_and_John_are_not_friends truth value is ;0.991619
+Nick_and_Kate_are_not_friends truth value is ;0.991466
+Nick_and_Lars_are_not_friends truth value is ;0.990858
+Nick_and_Nick_are_not_friends truth value is ;0.991521
+Anna_smokes truth value is ;0.959347
+Edward_smokes truth value is ;0.97414
+Frank_smokes truth value is ;0.967142
+Gary_smokes truth value is ;0.950637
+Ivan_smokes truth value is ;0.959539
+Nick_smokes truth value is ;0.966261
+Bob_does_not_smoke truth value is ;0.96696
+Chris_does_not_smoke truth value is ;0.949182
+Daniel_does_not_smoke truth value is ;0.968104
+Helen_does_not_smoke truth value is ;0.966858
+John_does_not_smoke truth value is ;0.964457
+Kate_does_not_smoke truth value is ;0.968672
+Lars_does_not_smoke truth value is ;0.972024
+Mich_does_not_smoke truth value is ;0.97363
+Anna_has_a_cancer truth value is ;0.956464
+Edward_has_a_cancer truth value is ;0.973224
+Bob_does_not_have_a_cancer truth value is ;0.969917
+Chris_does_not_have_a_cancer truth value is ;0.947713
+Daniel_does_not_have_a_cancer truth value is ;0.971838
+Frank_does_not_have_a_cancer truth value is ;0.9733
+Gary_does_not_have_a_cancer truth value is ;0.952497
+Helen_does_not_have_a_cancer truth value is ;0.970618

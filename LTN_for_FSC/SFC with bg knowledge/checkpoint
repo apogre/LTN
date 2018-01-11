@@ -1,0 +1,2 @@
+model_checkpoint_path: "SFC_with_bg_knowledge.ckpt"
+all_model_checkpoint_paths: "SFC_with_bg_knowledge.ckpt"
