@@ -8,6 +8,7 @@ import logictensornetworks as ltn
 import numpy as np
 import os
 import csv
+import sys
 
 ltn.default_layers = 10
 ltn.default_smooth_factor = 1e-10
@@ -211,7 +212,7 @@ everybody_has_a_friend = [ltn.Clause([ltn.Literal(True, Are_friends, ltn.Domain_
                                      label="everybody_has_a_friend")]
 
 
-friends_of = {anna:{bob,edward,frank,gary},
+friends_of = {anna:[bob,edward,frank,gary],
               bob:{chris},
               chris:{daniel},
               daniel:set(),
@@ -225,6 +226,9 @@ friends_of = {anna:{bob,edward,frank,gary},
               lars:set(),
               mich:{nick},
               nick:set()}
+
+print friends_of
+sys.exit(0)
 
 
 friends_positive_examples = [ltn.Clause([ltn.Literal(True,Are_friends,ltn.Domain_concat([x,y]))],
