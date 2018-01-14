@@ -119,13 +119,17 @@ class Domain_product(Domain):
     def __init__(self, dom1, dom2, label=None):
         self.columns = dom1.columns + dom2.columns
         if label is None:
-            self.label = "cross_product_of_" + "_".join([dom.label for dom in [dom1,dom2]])
+            self.label = "cross_product_of_" + "_".join([dom.label for dom in [dom1, dom2]])
         else:
         	self.label = label
         self.parameters = [par for dom in [dom1, dom2] for par in dom.parameters]
         tensor1 = tf.tile(dom1.tensor, (dom2.tensor.shape[0], 1))
-        tensor2 = tf.reshape(tf.tile(dom2.tensor, (1, dom1.tensor.shape[0])),
-                             (dom1.tensor.shape[0]*dom2.tensor.shape[0], dom2.tensor.shape[1]))
+        tensor2 = tf.reshape(
+            tf.tile(
+                dom2.tensor, (1, dom1.tensor.shape[0])
+            ),
+            (dom1.tensor.shape[0]*dom2.tensor.shape[0], dom2.tensor.shape[1])
+        )
         self.tensor = tf.concat([tensor1, tensor2], 1)
 
 
