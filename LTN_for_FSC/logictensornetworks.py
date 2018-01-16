@@ -295,7 +295,7 @@ class Equal(Predicate):
         return tf.exp(-tf.divide(delta,self.diameter))
 
 class Literal:
-    def __init__(self,polarity,predicate,domain=None,label=None):
+    def __init__(self, polarity, predicate, domain=None, label=None):
         global BIAS
         self.label=label
         self.predicate = predicate
@@ -358,12 +358,13 @@ class KnowledgeBase:
         self.train_op = train_op(self.loss,optimizer)
         self.saver = tf.train.Saver()
 
-    def save(self,sess,version=""):
+    def save(self, sess, version=""):
         save_path = self.saver.save(sess,self.save_path+self.label+version+".ckpt")
 
     def restore(self,sess):
         ckpt = tf.train.get_checkpoint_state(self.save_path)
         if ckpt and ckpt.model_checkpoint_path:
+            print("restoring model")
             self.saver.restore(sess, ckpt.model_checkpoint_path)
 
     def train(self,sess,feed_dict={}):

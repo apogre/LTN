@@ -29,13 +29,13 @@ person = ltn.Domain_union(everybody)
 
 p1p1 = ltn.Domain_concat([person, person])
 
-p1p2 = ltn.Domain_product(person, person)
-
-p1 = ltn.Domain_slice(p1p2, 0, number_of_features)
-
-p2 = ltn.Domain_slice(p1p2, number_of_features, number_of_features*2)
-
-p2p1 = ltn.Domain_concat([p2, p1])
+# p1p2 = ltn.Domain_product(person, person)
+#
+# p1 = ltn.Domain_slice(p1p2, 0, number_of_features)
+#
+# p2 = ltn.Domain_slice(p1p2, number_of_features, number_of_features*2)
+#
+# p2p1 = ltn.Domain_concat([p2, p1])
 #reversing p1p2, each of individual persons
 #
 # some_friend = ltn.Function("some_friend", person, person)
@@ -430,6 +430,8 @@ KB.save(sess)
 
 writepath = save_path+"results_spc_5f.csv"
 print("writing results in", writepath)
+
+sys.exit(0)
 
 with open(writepath, "w") as f:
     # result_smoking = sess.run(ltn.Literal(True, Smokes,person).tensor)[:, 0]
